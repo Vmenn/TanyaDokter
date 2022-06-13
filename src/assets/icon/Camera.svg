@@ -1,0 +1,14 @@
+<svg width="46" height="35" viewBox="0 0 46 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 31.5V5.5C1 4.5 2 4 3 4H4.5C4.5 2 5 1 6 1H14C15 1 15.5 3 15.5 4H19V3C19.0163 2.51929 19 2 19.5 2H25.5C26.5 2 26.5 2.5 26.5 3V4.5L43 4C44 4 45 5 45 6V31.5C45 33 44 34 43 34H3C2 34 1 33 1 31.5Z" fill="black" stroke="black"/>
+<circle cx="23" cy="18.5" r="12" fill="white"/>
+<circle cx="23" cy="18.5" r="12" fill="white"/>
+<circle cx="23" cy="18.5" r="8" fill="white"/>
+<circle cx="23" cy="18.5" r="8" fill="black"/>
+<circle cx="23" cy="18.5" r="3" fill="white"/>
+<circle cx="23" cy="18.5" r="3" fill="white"/>
+<circle cx="8" cy="29.5" r="2" fill="white"/>
+<circle cx="8" cy="29.5" r="2" fill="white"/>
+<path d="M43 7.5C43 9.42311 40.9853 9.5 38.5 9.5C36.0147 9.5 34 9.42311 34 7.5C34 5.57689 36.0147 5.5 38.5 5.5C40.9853 5.5 43 5.57689 43 7.5Z" fill="white"/>
+<path d="M43 7.5C43 9.42311 40.9853 9.5 38.5 9.5C36.0147 9.5 34 9.42311 34 7.5C34 5.57689 36.0147 5.5 38.5 5.5C40.9853 5.5 43 5.57689 43 7.5Z" fill="white"/>
+<path d="M6.66667 1C5.41667 1 5 1.66667 5 3H15C15 2 14.5833 1 13.3333 1H6.66667Z" fill="white"/>
+</svg>
