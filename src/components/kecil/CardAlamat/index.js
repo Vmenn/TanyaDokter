@@ -1,20 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View ,TouchableOpacity} from 'react-native'
 import React from 'react'
-import { Colors,fonts } from '../../../utils'
+import { Colors, fonts } from '../../../utils'
 import { RFValue } from 'react-native-responsive-fontsize'
 import { heightMobileUI } from '../../../utils/constant'
 import Gap from '../Gap'
-const CardAlamat = () => {
+const CardAlamat = ({ profile }) => {
   return (
     <View style={styles.information}>
+      <View style={styles.alamat}>
+        <View style={styles.Textcardalamat}>
+          <Text style={styles.alamatPengiriman}>Alamat Pengriman</Text>
+          <TouchableOpacity activeOpacity={0.7}>
+            <Text style={styles.pilihAlamat}>Pilih alamat lain</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
       <View style={styles.cardalamat}>
         <Gap Height={6} />
-      <Text style={styles.textAlamat}>jln barokah no 86 desa wanaherang gn putri bogor rt 03 11 </Text>
-      <Text style={styles.namaHp}>Muhamad Firmansyah (081510828843)</Text>
-      <Text style={styles.AlamatLengkap}>Jalan barokah no 08 desa wanaherang kec gunung putri desa parungdengdek rt 03/11 kode pos 16965 bogor gang rumah di depan sekolahan generasi mandiri (GM) Gunung Putri, Kab. Bogor Jawa Barat, 16965
-        Gunung Putri, Kab. Bogor, 16960</Text>
+        <Text style={styles.textAlamat}>{profile.nama}</Text>
+        <Text style={styles.namaHp}>{profile.nama} ({profile.noHp})</Text>
+        <Text style={styles.kota}>{profile.kota}</Text>
+        <Text style={styles.AlamatLengkap}>{profile.alamat_lengkap}</Text>
       </View>
-      
+
     </View>
   )
 }
@@ -22,31 +30,60 @@ const CardAlamat = () => {
 export default CardAlamat
 
 const styles = StyleSheet.create({
-  information:{
-    backgroundColor:Colors.White,
+  information: {
+    backgroundColor: Colors.White,
     // marginHorizontal:15,
-    
-},cardalamat:{
-  marginHorizontal:15,
-  paddingBottom:8
+
+  }, cardalamat: {
+    marginHorizontal: 15,
+    paddingBottom: 8
+  },
+  textAlamat: {
+    fontSize: RFValue(16, heightMobileUI),
+    fontFamily: fonts.primary.Medium,
+    color: Colors.Black,
+  },
+  namaHp: {
+    fontSize: 12,
+    fontFamily: fonts.primary.Reguler,
+    color: Colors.Grey,
+    marginTop: 4
+  },
+  AlamatLengkap: {
+    fontSize: 12,
+    fontFamily: fonts.primary.Reguler,
+    color: Colors.Grey,
+    textAlign: 'justify',
+    lineHeight: 14
+  },
+  kota: {
+    fontSize: 12,
+    fontFamily: fonts.primary.Reguler,
+    color: Colors.Grey,
+    textAlign: 'justify',
+    marginTop: 6,
+    lineHeight: 14
+  },
+  alamat: {
+    borderBottomWidth: 1,
+    borderColor: Colors.Grey,
+    paddingVertical: 8,
+    backgroundColor: Colors.White,
 },
-textAlamat:{
-  fontSize:RFValue(16,heightMobileUI),
-  fontFamily:fonts.primary.Medium,
-  color:Colors.Black,
+Textcardalamat: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  marginHorizontal: 15,
 },
-namaHp:{
-  fontSize:12,
-  fontFamily:fonts.primary.Reguler,
-  color:Colors.Grey,
-  marginTop:4
+
+alamatPengiriman: {
+  fontSize: 14,
+  fontFamily: fonts.primary.Medium,
+  color: Colors.Black
 },
-AlamatLengkap:{
-  fontSize:12,
-  fontFamily:fonts.primary.Reguler,
-  color:Colors.Grey,
-  textAlign:'justify',
-  marginTop:6,
-  lineHeight:14
+pilihAlamat: {
+  fontSize: 14,
+  fontFamily: fonts.primary.Medium,
+  color: Colors.FontsThree
 },
 })
