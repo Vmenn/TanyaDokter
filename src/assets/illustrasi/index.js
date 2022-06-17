@@ -9,6 +9,7 @@ import IconChat from './IconChat.svg';
 import IconPhone from './IconPhone.svg';
 import IconLocation from './IconLocation.svg';
 import IconTime from './IconTime.svg';
+import IconKerCil from './IconKerCil.svg';
 export {
     DoctorMen,
     Suster,
@@ -20,5 +21,6 @@ export {
     IconChat,
     IconPhone,
     IconTime,
-    IconLocation
+    IconLocation,
+    IconKerCil
 }
