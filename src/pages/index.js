@@ -14,6 +14,9 @@ import Obat from './Obat'
 import Keranjang from './Keranjang'
 import DetailObat from './DetailObat'
 import Checkout from './Checkout'
+import ChangePassword from './ChangePassword'
+import History from './History'
+
 export{
     Home,
     Chat,
@@ -30,5 +33,7 @@ export{
     Obat,
     Keranjang,
     DetailObat,
-    Checkout
+    Checkout,
+    ChangePassword,
+    History
 }

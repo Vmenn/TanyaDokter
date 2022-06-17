@@ -42,7 +42,7 @@ export default class Profile extends Component {
           </View>
         </View>
 
-        <ListMenu MenuProfile={MenuProfile} />
+        <ListMenu MenuProfile={MenuProfile} navigation={this.props.navigation}/>
         
       </SafeAreaView>
 

@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Home, SplashScreen, Tutorial, Chat, Hospital,News, Category, DetailDokter, Profile,EditProfile, Login, Register, Obat, Keranjang, DetailObat, Checkout} from '../pages';
+import { Home, SplashScreen, Tutorial, Chat, Hospital, News, Category, DetailDokter, Profile, EditProfile, Login, Register, Obat, Keranjang, DetailObat, Checkout, ChangePassword, History } from '../pages';
 const Stack = createNativeStackNavigator();
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -34,7 +34,7 @@ const Router = () => {
                 name="Tutorial"
                 component={Tutorial}
                 options={{ headerShown: false }} />
-            
+
             <Stack.Screen
                 name="Login"
                 component={Login}
@@ -44,7 +44,7 @@ const Router = () => {
                 name="Register"
                 component={Register}
                 options={{ headerShown: false }} />
-            
+
             <Stack.Screen
                 name="MainApp"
                 component={MainApp}
@@ -54,7 +54,7 @@ const Router = () => {
                 name="Chat"
                 component={Chat}
                 options={{ headerShown: false }} />
-    
+
             <Stack.Screen
                 name="Obat"
                 component={Obat}
@@ -104,9 +104,17 @@ const Router = () => {
                 name="Checkout"
                 component={Checkout}
                 options={{ headerShown: false }} />
-        </Stack.Navigator>
 
-        
+            <Stack.Screen
+                name="ChangePassword"
+                component={ChangePassword}
+                options={{ headerShown: false }} />
+
+            <Stack.Screen
+                name="History"
+                component={History}
+                options={{ headerShown: false }} />
+        </Stack.Navigator>
     )
 }
 

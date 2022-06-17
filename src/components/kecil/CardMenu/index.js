@@ -5,10 +5,10 @@ import { Dewi } from '../../../assets'
 import { RFValue } from 'react-native-responsive-fontsize'
 import { heightMobileUI } from '../../../utils/constant'
 
-const CardMenu = ({Profile}) => {
+const CardMenu = ({Profile,navigation}) => {
     return (
         <View style={styles.menuItem}>
-            <TouchableOpacity style={styles.item} activeOpacity={0.7}>
+            <TouchableOpacity style={styles.item} activeOpacity={0.7} onPress={()=>navigation.navigate(Profile.halaman)}>
                 {Profile.gambar}
             </TouchableOpacity>
             <View style={styles.dsc}>
