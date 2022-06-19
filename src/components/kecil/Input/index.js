@@ -2,7 +2,7 @@ import { StyleSheet, Text, View ,SafeAreaView,TextInput} from 'react-native'
 import React from 'react'
 import { Colors, fonts } from '../../../utils'
 
-const Input = ({place,aktif,textarea}) => {
+const Input = ({place,aktif,textarea,secureTextEntry,value}) => {
   if (textarea){
     return(
       <SafeAreaView style={styles.container}>
@@ -12,7 +12,7 @@ const Input = ({place,aktif,textarea}) => {
   }
   return (
     <SafeAreaView style={styles.container}>
-        <TextInput style={styles.input} placeholder={place} placeholderTextColor={'white'} blurOnSubmit={aktif}/>
+        <TextInput style={styles.input} value={value} secureTextEntry={secureTextEntry} placeholder={place} placeholderTextColor={'white'} blurOnSubmit={aktif}/>
     </SafeAreaView>
   )
 }

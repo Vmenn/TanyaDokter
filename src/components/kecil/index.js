@@ -12,6 +12,7 @@ import Inputan from "./inputan";
 import pilihan from "./pilihan";
 import CardKeranjang from "./CardKeranjang";
 import CardAlamat from "./CardAlamat";
+import CardHistory from "./CardHistory";
 
 export {
     Gap,
@@ -27,5 +28,6 @@ export {
     Inputan,
     pilihan,
     CardKeranjang,
-    CardAlamat
+    CardAlamat,
+    CardHistory
 }

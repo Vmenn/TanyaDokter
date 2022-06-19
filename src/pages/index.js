@@ -9,13 +9,14 @@ import Profile from './Profile'
 import DetailDokter from './DetailDokter'
 import EditProfile from './EditProfile'
 import Login from './Login'
-import Register from './Register'
 import Obat from './Obat'
 import Keranjang from './Keranjang'
 import DetailObat from './DetailObat'
 import Checkout from './Checkout'
 import ChangePassword from './ChangePassword'
 import History from './History'
+import Register from './Register/Register'
+import Register2 from './Register/Register2'
 
 export{
     Home,
@@ -35,5 +36,6 @@ export{
     DetailObat,
     Checkout,
     ChangePassword,
-    History
+    History,
+    Register2
 }

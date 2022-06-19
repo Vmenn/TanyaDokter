@@ -8,6 +8,7 @@ import ListHospital from './ListHospital';
 import ListBerita from "./ListBerita";
 import ListMenu from "./ListMenu";
 import ListKeranjang from "./ListKeranjang";
+import ListHistory from "./ListHistory";
 
 export {
     BottomNavigator,
@@ -19,5 +20,6 @@ export {
     ListHospital,
     ListBerita,
     ListMenu,
-    ListKeranjang
+    ListKeranjang,
+    ListHistory
 }

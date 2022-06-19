@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Home, SplashScreen, Tutorial, Chat, Hospital, News, Category, DetailDokter, Profile, EditProfile, Login, Register, Obat, Keranjang, DetailObat, Checkout, ChangePassword, History } from '../pages';
+import { Home, SplashScreen, Tutorial, Chat, Hospital, News, Category, DetailDokter, Profile, EditProfile, Login, Obat, Keranjang, DetailObat, Checkout, ChangePassword, History, Register, Register2 } from '../pages';
 const Stack = createNativeStackNavigator();
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -43,6 +43,11 @@ const Router = () => {
             <Stack.Screen
                 name="Register"
                 component={Register}
+                options={{ headerShown: false }} />
+
+            <Stack.Screen
+                name="Register2"
+                component={Register2}
                 options={{ headerShown: false }} />
 
             <Stack.Screen
