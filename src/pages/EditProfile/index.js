@@ -51,7 +51,7 @@ export default class EditProfile extends Component {
                         <Gap Height={22}/>
                         <Pilihan label="Kota" datas={dataKota}/>
                         <Gap Height={22}/>
-                        <Pilihan label="Provinsi" dataKota={dataProvinsi}/>
+                        <Pilihan label="Provinsi" datas={dataProvinsi}/>
                         <Gap Height={22}/>
                     </View>
 

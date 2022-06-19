@@ -3,13 +3,13 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Colors, fonts, responsiveHeight} from '../../../utils';
 import { Picker } from '@react-native-picker/picker';
 
-const Pilihan = ({label, datas, width, height, fontSize}) => {
+const Pilihan = ({label, datas, width, height, fontSize,type}) => {
   const [selectedValue, setSelectedValue] = useState('');
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label(fontSize)}>{label} </Text>
-      <View style={styles.wrapperPicker}>
+      <Text style={styles.label(fontSize,type)}>{label} </Text>
+      <View style={styles.wrapperPicker(type)}>
         <Picker
           selectedValue={selectedValue}
           style={styles.picker(width, height, fontSize)}
@@ -17,9 +17,9 @@ const Pilihan = ({label, datas, width, height, fontSize}) => {
             setSelectedValue(itemValue)
           }>
           <Picker.Item label="Pilih" value="" />
-          {/* {datas.map((item, index) => {
+          {datas.map((item, index) => {
               return <Picker.Item label={item} value={item} key={index} />
-          })} */}
+          })}
         </Picker>
       </View>
     </View>
@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 10,
   },
-  label: (fontSize) => ({
+  label: (fontSize,type) => ({
     fontSize: fontSize ? fontSize : 18,
     fontFamily: fonts.primary.Reguler,
-    color:Colors.Black
+    color: type === 'Secondary' ? 'white':'black'
   }),
   picker: (width, height, fontSize) => ({
     fontSize: fontSize ? fontSize : 18,
@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
     marginTop: -10,
     marginBottom: 10
   }),
-  wrapperPicker: {
+  wrapperPicker:(type)=>({
     borderWidth: 1,
     borderRadius: 5,
-    borderColor: Colors.Black,
-  }
+    borderColor: type === 'Secondary' ? 'white':'black',
+  }) 
 });

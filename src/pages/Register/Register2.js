@@ -29,8 +29,8 @@ export default class Register2 extends Component {
                         <View style={styles.FormLogin}>
                         <Inputan textarea label="Alamat"  type="Secondary" placeColor="white"/>
                         <Inputan textarea label="Alamat Lengkap"  type="Secondary" placeColor="white"/>
-                        <Pilihan label="Kota" datas={dataKota}/>
-                        <Pilihan label="Provinsi" datas={dataProvinsi}/>
+                        <Pilihan label="Kota" datas={dataKota} type="Secondary"/>
+                        <Pilihan label="Provinsi" datas={dataProvinsi} type="Secondary"/>
                         <Gap Height={22} />
                         <Button Title="Continue" onPress={()=>this.props.navigation.navigate('MainApp')} />
                         <Gap Height={22} />

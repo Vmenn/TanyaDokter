@@ -25,12 +25,13 @@ export default class News extends Component {
   }
   render() {
     const {News } = this.state
+    const {navigation} = this.props
     return (
       <SafeAreaView style={styles.container}>
           <HeaderComponent Title="News" onPress={this.onBack}/>
           <Gap Height={4} />
           <ScrollView showsVerticalScrollIndicator={false}>
-            <ListBerita News={News}/> 
+            <ListBerita News={News} navigation={navigation}/> 
           </ScrollView>
       </SafeAreaView>
     )

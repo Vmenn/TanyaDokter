@@ -2,9 +2,9 @@ import { StyleSheet, Text, View, Image,ScrollView, SafeAreaView ,TouchableOpacit
 import React from 'react'
 import { responsiveHeight, responsiveWidth, Colors, fonts } from '../../../utils'
 import { TimeUpload,Share } from '../../../assets'
-const CardBerita = ({New}) => {
+const CardBerita = ({New,navigation}) => {
   return (
-    <View style={styles.items}>
+    <TouchableOpacity activeOpacity={0.7} style={styles.items} onPress={()=>navigation.navigate('DetailNews',{New})}>
     <View style={styles.gambarbackround}>
       <Image source={New.gambar} style={styles.gambar} />
     </View>
@@ -21,7 +21,7 @@ const CardBerita = ({New}) => {
       </TouchableOpacity>
   </View>
   </View>
-  </View>
+  </TouchableOpacity>
   )
 }
 
