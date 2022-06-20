@@ -16,12 +16,13 @@ export default class Checkout extends Component {
 
         this.state = {
             profile: DummyProfile,
-            Pesanan : DummyPesanan[0]
+            Pesanan : DummyPesanan[0],
+            Ekpredisi: [],
         }
     }
 
     render() {
-        const { profile,Pesanan } = this.state
+        const { profile,Pesanan,Ekpredisi } = this.state
         return (
             <SafeAreaView style={styles.container}>
                 <HeaderComponent Title="Checkout" onPress={()=>this.props.navigation.goBack()} />
@@ -35,7 +36,7 @@ export default class Checkout extends Component {
                             <Text style={styles.TextSubharga}>Rp {numberWithCommas(Pesanan.totalHarga)}</Text>
                         </View>
 
-                        <Pilihan />
+                        <Pilihan datas={Ekpredisi} />
 
                         <Text style={styles.Ringkasanbelanja}>Ringkasan Belanja</Text>
                         <View style={styles.hargaekpedisi}>
@@ -56,7 +57,7 @@ export default class Checkout extends Component {
                     </View>
                     <TouchableOpacity activeOpacity={0.7} style={styles.pay} onPress={()=>this.props.navigation.naviget()}>
                         <Paymaster/>
-                        <Text style={styles.check}>Kirim P                                                               esanan</Text>
+                        <Text style={styles.check}>Kirim Pesanan</Text>
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>
