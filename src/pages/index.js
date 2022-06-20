@@ -18,7 +18,7 @@ import History from './History'
 import Register from './Register/Register'
 import Register2 from './Register/Register2'
 import DetailNews from './DetailNews'
-import DokterCategory from './DokterCategory'
+
 
 export{
     Home,
@@ -41,5 +41,5 @@ export{
     History,
     Register2,
     DetailNews,
-    DokterCategory
+
 }

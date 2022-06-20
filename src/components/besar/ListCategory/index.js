@@ -4,12 +4,12 @@ import { DokterUmum } from '../../../assets'
 import { Colors,fonts } from '../../../utils'
 import { CardCategory } from '../../kecil'
 
-const ListCategory = ({Categorys}) => {
+const ListCategory = ({Categorys,navigation}) => {
     return (
         <View style={styles.category} >
             {Categorys.map((Cat) => {
                 return(
-                    <CardCategory Cat={Cat} key={Cat.id}/>
+                    <CardCategory Cat={Cat} key={Cat.id} navigation={navigation}/>
                 )
             })}
             

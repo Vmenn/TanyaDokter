@@ -1,14 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Text, StyleSheet, View } from 'react-native'
+import React, { Component } from 'react'
 
-const Category = () => {
-  return (
-    <View>
-      <Text>Category</Text>
-    </View>
-  )
+export default class Category extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      Cat: this.props.route.params.Cat,
+      images: this.props.route.params.Cat.gambar
+    }
+  }
+  render() {
+    const { Cat, images } = this.state
+    return (
+      <View>
+        <Text>{Cat.nama}</Text>
+      </View>
+    )
+  }
 }
-
-export default Category
 
 const styles = StyleSheet.create({})

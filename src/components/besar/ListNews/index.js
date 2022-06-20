@@ -3,12 +3,12 @@ import React from 'react'
 import { Colors, responsiveHeight, responsiveWidth,fonts } from '../../../utils'
 import { CardNews } from '../../kecil'
 
-const ListNews = ({News}) => {
+const ListNews = ({News,navigation}) => {
     return (
         <View style={styles.conatiner}>
             {News.map((New) =>{
                 return(
-                    <CardNews New={New} key={New.id} />
+                    <CardNews New={New} key={New.id} navigation={navigation}/>
                 )
             })}
         </View>

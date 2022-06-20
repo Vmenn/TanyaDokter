@@ -1,12 +1,12 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { responsiveHeight, responsiveWidth, Colors, fonts } from '../../../utils'
-const CardNews = ({ New }) => {
+const CardNews = ({ New,navigation }) => {
     return (
         <View style={styles.itemscontent}>
-            <View style={styles.imagenews}>
+            <TouchableOpacity onPress={()=>navigation.navigate('DetailNews',{New})} style={styles.imagenews} activeOpacity={0.7}>
                 <Image source={New.gambar} style={styles.image} />
-            </View>
+            </TouchableOpacity>
             <Text style={styles.judul}>{New.judul}</Text>
         </View>
     )

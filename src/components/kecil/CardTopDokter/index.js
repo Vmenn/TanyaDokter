@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Colors } from '../../../utils'
 import { responsiveHeight, responsiveWidth } from '../../../utils'
 import { fonts } from '../../../utils'
 import { ChatDokter } from '../../../assets'
 
-const CardTopDokter = ({ Top }) => {
+const CardTopDokter = ({ Top,navigation }) => {
     return (
-        <View style={styles.items}>
+        <TouchableOpacity style={styles.items} activeOpacity={0.7} onPress={()=>navigation.navigate('DetailDokter',{Top})}>
         <View style={styles.gambarbackround}>
             <Image source={Top.gambar} style={styles.gambar}/>
         </View>
@@ -15,9 +15,8 @@ const CardTopDokter = ({ Top }) => {
         <Text style={styles.spesialis}>{Top.cate.nama}</Text>
         <View style={styles.rating}>
             <Text style={styles.rate}>{Top.rate}</Text>
-            <ChatDokter/>
         </View>
-    </View>
+    </TouchableOpacity>
     )
 }
 

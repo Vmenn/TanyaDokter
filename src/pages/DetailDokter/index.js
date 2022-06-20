@@ -1,26 +1,35 @@
 import { StyleSheet, Text, View, Image,TouchableOpacity } from 'react-native'
-import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { HeaderComponent } from '../../components'
 import { DokterAnak, DokterGigi, IconAnak, IconChat, IconGigi, IconLocation, IconMata, IconPhone, IconProfile, IconTime } from '../../assets'
 import { Colors, fonts, responsiveHeight, responsiveWidth } from '../../utils'
 import { Caption } from 'react-native-paper'
+import React, { Component } from 'react'
 
-const DetailDokter = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <HeaderComponent Title='DetailDokter' />
+export default class DetailDokter extends Component {constructor(props) {
+  super(props)
+
+  this.state = {
+  Top:this.props.route.params.Top,
+  images:this.props.route.params.Top.gambar
+  }
+}
+render() {
+  const {Top,images} = this.state
+    return (
+      <SafeAreaView style={styles.container}>
+      <HeaderComponent Title='DetailDokter' onPress={()=>this.props.navigation.goBack()}/>
       <View style={styles.detail}>
         <View style={styles.profileImage}>
-          <Image source={require('../../assets/image/Dokter1.png')} style={styles.image} />
+          <Image source={Top.gambar} style={styles.image} />
         </View>
         <View style={styles.profileName}>
-          <Text style={styles.nameDokter}>Drs.Muhamad Firmansyah</Text>
-          <Text style={styles.spesialis}>Dokter Anak</Text>
+          <Text style={styles.nameDokter}>{Top.nama}</Text>
+          <Text style={styles.spesialis}>{Top.cate.nama}</Text>
 
           <View style={styles.Action}>
             <TouchableOpacity activeOpacity={0.7} style={styles.backgroundIcon}>
-              <IconAnak />
+              <Image source={Top.cate.gambar}/>
             </TouchableOpacity>
             <TouchableOpacity  activeOpacity={0.7} style={styles.backgroundIcon}>
               <IconChat />
@@ -35,7 +44,7 @@ const DetailDokter = () => {
       <View style={styles.dsc}>
         <Text style={styles.about}>About</Text>
         <Caption style={styles.cap}>
-        Lörem ipsum larar fadeplade diregt hang. Häs makrobel fast krislåda, sohyrtad. Operaism pasm smygöppna. Podat nehet att airbaghjälm och tristik. Prenat sogon, tyr men nitöliga. 
+        {Top.about}
         </Caption>
       </View>
 
@@ -44,9 +53,9 @@ const DetailDokter = () => {
       <View style={styles.location}>
         <IconLocation style={styles.Icon}/>
         <View style={styles.caption}>
-          <Text style={styles.title}>Klinik Permata</Text>
+          <Text style={styles.title}>{Top.klinik.nama}</Text>
         <Caption style={styles.alamatJadwal}>
-        Ruko Permata Cibubur Blok.D-4 No.1, Jalan Cileungsi-Jonggol, Cileungsi Kidul, Kec. Cileungsi, Kabupaten Bogor, Jawa Barat 16820
+        {Top.klinik.alamat}
         </Caption>
         </View>
       </View>
@@ -56,19 +65,19 @@ const DetailDokter = () => {
         <View style={styles.caption}>
         <Text style={styles.title}>Daily Praktik</Text>
         <Caption style={styles.alamatJadwal}>
-        Senin-Jumat
+        {Top.dialy}
         </Caption>
         <Caption style={styles.alamatJadwal}>
-          10:00-03:30
+        {Top.jam}
         </Caption>
         </View>
       </View>
     </View>
     </SafeAreaView>
-  )
+    )
+  }
 }
 
-export default DetailDokter
 
 const styles = StyleSheet.create({
   container: {

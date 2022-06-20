@@ -21,10 +21,6 @@ export default class Home extends Component {
     onProfile = () => {
         this.props.navigation.navigate('Profile');
     };
-
-    onDetailDokter = () => {
-        this.props.navigation.navigate('DetailDokter');
-    };
     constructor(props) {
         super(props)
 
@@ -36,6 +32,7 @@ export default class Home extends Component {
     }
     render() {
         const {Categorys,TopDokter,News} = this.state
+        const {navigation} = this.props
         return (
             <SafeAreaView style={styles.container}>
                 {/* Header */}
@@ -50,7 +47,7 @@ export default class Home extends Component {
                         <View style={styles.judul}>
                             <Text style={styles.categorytitle} >Dokter Category</Text>
                         </View>
-                        <ListCategory Categorys={Categorys}/>
+                        <ListCategory Categorys={Categorys} navigation={navigation}/>
                     </View>
                     {/* Category End */}
                     <Gap Height={14} />
@@ -64,16 +61,16 @@ export default class Home extends Component {
                             </View>
                         </View>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                            <ListNews News={News} />
+                            <ListNews News={News} navigation={navigation}/>
                         </ScrollView>
                     </View>
                     {/* Berita End */}
                     <Gap Height={14} />
                     {/* DokterTop */}
                 <View style={styles.TopDokter}>
-                    <Text style={styles.titledokter} onPress={this.onDetailDokter} >Top Dokter</Text>
+                    <Text style={styles.titledokter}>Top Dokter</Text>
 
-                    <ListTopDokter TopDokter={TopDokter}/>
+                    <ListTopDokter TopDokter={TopDokter} navigation={navigation}/>
                 </View>
                     {/* DokterTop End */}
                 </ScrollView>

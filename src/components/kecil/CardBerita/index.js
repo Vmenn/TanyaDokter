@@ -10,7 +10,7 @@ const CardBerita = ({New,navigation}) => {
     </View>
   <View style={styles.description}>
     <Text style={styles.judul}>{New.judul}</Text>
-    <Text style={styles.dsc}>{New.dsc}</Text>
+    <Text numberOfLines={1} style={styles.dsc}>{New.dsc}</Text>
     <View style={styles.timeupload}>
       <View style={styles.time}>
         <TimeUpload />
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     height:responsiveHeight(130),
     maxHeight:responsiveHeight(130),
     marginHorizontal:10,
-    marginVertical:4
+    marginVertical:4,
   },
   timeupload:{
     flexDirection:'row',
@@ -104,6 +104,7 @@ dsc:{
   fontSize: 12,
     marginTop:2,
     color: Colors.Grey,
-    fontFamily: fonts.primary.Reguler
+    fontFamily: fonts.primary.Reguler,
+    flex:1,
 }
 })

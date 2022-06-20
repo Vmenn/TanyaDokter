@@ -4,10 +4,10 @@ import { DokterUmum } from '../../../assets'
 import { responsiveHeight, responsiveWidth, Colors } from '../../../utils'
 import { fonts } from '../../../utils'
 
-const CardCategory = ({ Cat }) => {
+const CardCategory = ({ Cat,navigation }) => {
     return (
         <View style={styles.item}>
-            <TouchableOpacity style={styles.itemcategory} activeOpacity={0.7} >
+            <TouchableOpacity style={styles.itemcategory} activeOpacity={0.7} onPress={()=>navigation.navigate('Category',{Cat})}>
                 <Image source={Cat.gambar}/>
             </TouchableOpacity>
             <Text style={styles.titlespesialis}>{Cat.nama}</Text>

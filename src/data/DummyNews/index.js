@@ -6,7 +6,7 @@ export const DummyNews = [
     id:1,
 gambar:Vaksin,
 judul:'Pentingnya melakukan vaksin di masa pandemi ?',
-dsc:'Vaksinasi atau Imunisasi bertujuan untuk membuat sistem...'
+dsc:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry sstandard dummy text ever since the 1500s, when an unknownprinter took a galley of type and scrambled it to mak'
 },
 {
     id:2,

@@ -4,9 +4,7 @@ import { Button, Gap, HeaderComponent, Inputan } from '../../components';
 import {Colors, fonts, responsiveHeight, responsiveWidth,} from '../../utils';
 
 export default class DetailObat extends Component {
-    goBack = () => {
-        this.props.navigation.goBack();
-    };
+
     constructor(props) {
         super(props)
 
@@ -20,7 +18,7 @@ export default class DetailObat extends Component {
         // console.log("Parameter:",this.props.route.params);
         return (
             <View style={styles.page}>
-            <HeaderComponent Title="ObatDetail" onPress={()=>this.goBack()}/>
+            <HeaderComponent Title="ObatDetail" onPress={()=>this.props.navigation.goBack()}/>
             <ScrollView>
                 <View style={styles.covergambar}>
                     <Image source={Obat.gambar} style={styles.gambar}/>
