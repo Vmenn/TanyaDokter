@@ -1,5 +1,6 @@
 import { Text, StyleSheet, View } from 'react-native'
 import React, { Component } from 'react'
+import CardCategoryDokter from '../../components/kecil/CardCategoryDokter'
 
 export default class Category extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class Category extends Component {
     const { Cat, images } = this.state
     return (
       <View>
-        <Text>{Cat.nama}</Text>
+        <CardCategoryDokter Cat={Cat}/>
       </View>
     )
   }

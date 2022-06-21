@@ -9,6 +9,7 @@ import ListBerita from "./ListBerita";
 import ListMenu from "./ListMenu";
 import ListKeranjang from "./ListKeranjang";
 import ListHistory from "./ListHistory";
+import ListDokterCategory from "./ListDokterCategory";
 
 export {
     BottomNavigator,
@@ -21,5 +22,6 @@ export {
     ListBerita,
     ListMenu,
     ListKeranjang,
-    ListHistory
+    ListHistory,
+    ListDokterCategory
 }
