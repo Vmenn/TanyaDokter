@@ -1,18 +1,19 @@
-import { GET_USER } from "../../actions/UserAction"
-
+import { GET_USER } from '../../actions/UserAction'
 
 const initialState = {
     dataUser: false
 }
 
 export default function (state = initialState, action) {
-    switch (action.type) {
+    switch(action.type) {
         case GET_USER:
+            // console.log('masuk', action);
             return {
                 ...state,
                 dataUser: action.payload
             }
-            default: 
-                return state
+        default:
+            return state
     }
 }
+

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { responsiveHeight, responsiveWidth, Colors, fonts } from '../../../utils'
+import {connect} from 'react-redux'
 const CardNews = ({ New,navigation }) => {
     return (
         <View style={styles.itemscontent}>

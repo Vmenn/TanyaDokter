@@ -4,8 +4,10 @@ import { Logo } from '../../assets'
 import { Button, Gap, Input, Inputan, Link } from '../../components'
 import React, { Component } from 'react'
 import Pilihan from '../../components/kecil/pilihan'
+import {connect}from 'react-redux'
+import {getProvinsiList} from '../../actions/RajaOngkirAction'
 
-export default class Register2 extends Component {
+class Register2 extends Component {
     constructor(props) {
         super(props)
 
@@ -14,8 +16,14 @@ export default class Register2 extends Component {
             dataKota: [],
         }
     }
+
+    componentDidMount(){
+        this.props.dispatch(getProvinsiList())
+    }
     render() {
+        // console.log("Data provinsi:" , this.props.getProvinsiResult);
         const {dataProvinsi,dataKota,profile} = this.state
+        const {getProvinsiResult,} = this.props
         return (
                 <SafeAreaView style={styles.container}>
                     <ScrollView>
@@ -30,7 +38,7 @@ export default class Register2 extends Component {
                         <Inputan textarea label="Alamat"  type="Secondary" placeColor="white"/>
                         <Inputan textarea label="Alamat Lengkap"  type="Secondary" placeColor="white"/>
                         <Pilihan label="Kota" datas={dataKota} type="Secondary"/>
-                        <Pilihan label="Provinsi" datas={dataProvinsi} type="Secondary"/>
+                        <Pilihan label="Provinsi" datas={getProvinsiResult ? getProvinsiResult:[]} type="Secondary"/>
                         <Gap Height={22} />
                         <Button Title="Continue" onPress={()=>this.props.navigation.navigate('MainApp')} />
                         <Gap Height={22} />
@@ -42,7 +50,10 @@ export default class Register2 extends Component {
         )
     }
 }
-
+const mapStatetoProps = (state)=>({
+    getProvinsiResult: state.RajaOngkirReducer.getProvinsiResult
+})
+export default connect(mapStatetoProps,null)(Register2)
 const styles = StyleSheet.create({
     container: {
         flex: 1,

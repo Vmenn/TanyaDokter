@@ -4,7 +4,7 @@ import { Gap } from '../../kecil'
 import { IconProfile } from '../../../assets'
 import { Colors, fonts } from '../../../utils'
 
-const Header = ({navigation}) => {
+const Header = ({onPress}) => {
   return (
     <View style={styles.profile}>
     <View style={styles.profileuser}>
@@ -12,7 +12,7 @@ const Header = ({navigation}) => {
         <Gap Height={15} />
         <Text style={styles.nama}>Muhamad Firmansyah</Text>
     </View>
-    <TouchableOpacity style={styles.photoprofile} activeOpacity={0.7} onPress={navigation}>
+    <TouchableOpacity style={styles.photoprofile} activeOpacity={0.7} onPress={onPress}>
         <IconProfile />
     </TouchableOpacity>
 </View>

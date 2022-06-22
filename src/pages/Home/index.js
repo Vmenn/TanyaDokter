@@ -1,26 +1,16 @@
-import { Text, StyleSheet, View, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { Text, StyleSheet, View, ScrollView, } from 'react-native'
 import React, { Component } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Dokter1, DokterAnak, DokterGigi, DokterJantung, DokterMata, DokterUmum, IconProfile, LebihDari } from '../../assets'
+import { LebihDari } from '../../assets'
 import { Gap, Header, ListCategory, ListNews, ListTopDokter, } from '../../components'
 import { Colors, fonts, responsiveHeight, responsiveWidth } from '../../utils'
-import { Dimensions } from 'react-native';
 import { DummyCategory, DummyNews, DummyTopDokter } from '../../data'
 import { RFValue } from 'react-native-responsive-fontsize'
 import { heightMobileUI } from '../../utils/constant'
 
-export default class Home extends Component {
-    onNews = () => {
-        this.props.navigation.navigate('News');
-    };
 
-    onCategory = () => {
-        this.props.navigation.navigate('Category');
-    };
-    
-    onProfile = () => {
-        this.props.navigation.navigate('Profile');
-    };
+class Home extends Component {
+
     constructor(props) {
         super(props)
 
@@ -30,14 +20,17 @@ export default class Home extends Component {
             News:DummyNews,
         }
     }
+    // componentDidMount(){
+    //     this.props.getUser();
+    // }
     render() {
         const {Categorys,TopDokter,News} = this.state
-        const {navigation} = this.props
+        const {navigation, } = this.props
         return (
             <SafeAreaView style={styles.container}>
                 {/* Header */}
                 <View style={styles.header} >
-                    <Header navigation={this.onProfile}/>
+                    <Header onPress={()=>this.props.navigation.navigate('Profile')}/>
                 </View>
                 {/* Header End */}
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -56,8 +49,8 @@ export default class Home extends Component {
                         <View style={styles.judul}>
                             <Text style={styles.categorytitle}>News</Text>
                             <View style={styles.panah} >
-                                <Text style={styles.lainnya} onPress={this.onNews}>Lihat lainnya </Text>
-                                <LebihDari onPress={this.onNews}/>
+                                <Text style={styles.lainnya} onPress={()=>this.props.navigation.navigate('News')}>Lihat lainnya </Text>
+                                <LebihDari onPress={()=>this.props.navigation.navigate('News')}/>
                             </View>
                         </View>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -79,7 +72,16 @@ export default class Home extends Component {
     }
 }
 
+// const mapStatetoProps = (state)=>({
+//     dataUser: state.UserReducer.dataUser
+// })
+
+export default Home
+
+// connect(mapStatetoProps,{getUser})( ) 
+
 const styles = StyleSheet.create({
+
     container: {
         // marginHorizontal: 15,
         backgroundColor: 'white',
