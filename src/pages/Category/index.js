@@ -15,6 +15,9 @@ export default class Category extends Component {
     const { Cat, images } = this.state
     return (
       <View>
+        <View>
+          <Text> Seaarch</Text>
+        </View>
         <CardCategoryDokter Cat={Cat}/>
       </View>
     )

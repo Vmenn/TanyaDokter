@@ -5,14 +5,18 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Router from './router';
+import { Provider } from 'react-redux';
+import store from './reducers/store';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
       <Router/>
     </NavigationContainer>
+    </Provider>
   );
 }
 

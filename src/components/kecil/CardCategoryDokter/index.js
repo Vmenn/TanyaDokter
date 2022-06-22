@@ -5,7 +5,7 @@ import { Colors, fonts, responsiveHeight, responsiveWidth } from '../../../utils
 const CardCategoryDokter = ({Cat}) => {
   return (
     <View style={styles.pages}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{marginTop:50}}>
         {/* <Text>{Cat.nama}</Text> */}
       {Cat.dokters.map((items) => {
                     return (
